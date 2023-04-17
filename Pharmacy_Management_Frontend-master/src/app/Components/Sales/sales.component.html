@@ -1,0 +1,119 @@
+<main style="margin-top: 58px;">
+
+        <div>
+            <h2>Enter Sales Details</h2>
+        </div>
+        <div class="container border solid black ">
+          <div class="row pt-4">
+            <div class="col-md-12">
+              <form>
+                <fieldset>
+                  <div class="form-group">
+                    <label for="id"><span class="req">* </span> Id: </label>
+                    <input
+                      required
+                      type="text"
+                      [(ngModel)]="sale.id"
+                      name="id"
+                      id="id"
+                      class="form-control phone"
+                      maxlength="28"
+                      placeholder="Enter your id..."
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Name"><span class="req">* </span> Customer Name: </label>
+                    <input
+                      required
+                      type="text"
+                      [(ngModel)]="sale.customername"
+                      name="name"
+                      id="name"
+                      class="form-control phone"
+                      maxlength="28"
+                      placeholder="Enter Customer name"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Name"><span class="req">* </span> Date: </label>
+                    <input
+                      required
+                      type="text"
+                      [(ngModel)]="sale.date"
+                      name="name"
+                      id="name"
+                      class="form-control phone"
+                      maxlength="28"
+                      placeholder="Enter date (yyyy-dd-mm).."
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="contact"
+                      ><span class="req">* </span>Total Cost:
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      [(ngModel)]="sale.total_cost"
+                      name="contact"
+                      id="contact"
+                      class="form-control phone"
+                      maxlength="28"
+                      placeholder="Enter total cost.."
+                    />
+                  </div>
+                  <div class="form-group mt-3 text-center">
+                    <button
+                      class="btn btn-success"
+                      type="submit"
+                      name="submit_reg"
+                      value="Register"
+                      (click)="addSales()"
+                    >Register</button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+    <div>
+        <h2>Sales Details : </h2>
+    </div>
+
+    <div class="container border solid black">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Customer Name</th>
+                    <th>Date</th>
+                    <th>Total_Cost</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of sales;">
+                    <td>{{item.id}}</td>
+                    <td>{{item.customername}}</td>
+                    <td>{{item.date}}</td>
+                    <td>{{item.total_cost}}</td>
+                    <td><button class="btn btn-danger" (click)="deleteRecord(item.id)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="text-center-display">
+        <button (click)="displaySales()" class="btn btn-dark">display</button>
+    </div>
+</main>
