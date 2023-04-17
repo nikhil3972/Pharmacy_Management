@@ -1,5 +1,6 @@
 # Pharmacy_Management
 Steps for setup this project in to your local system
+
 Step1 - Clone the project
 ## Starting the backend 
 Step2 - Import the backend folder into Spring-tool-suite/Eclipse
